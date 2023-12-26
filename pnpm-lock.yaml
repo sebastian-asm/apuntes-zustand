@@ -8,6 +8,9 @@ dependencies:
   classnames:
     specifier: ^2.3.2
     version: 2.3.2
+  immer:
+    specifier: ^10.0.3
+    version: 10.0.3
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -20,9 +23,15 @@ dependencies:
   react-router-dom:
     specifier: ^6.16.0
     version: 6.21.0(react-dom@18.2.0)(react@18.2.0)
+  sweetalert2:
+    specifier: ^11.10.1
+    version: 11.10.1
+  uuid:
+    specifier: ^9.0.1
+    version: 9.0.1
   zustand:
     specifier: ^4.4.7
-    version: 4.4.7(@types/react@18.2.45)(react@18.2.0)
+    version: 4.4.7(@types/react@18.2.45)(immer@10.0.3)(react@18.2.0)
 
 devDependencies:
   '@types/react':
@@ -31,6 +40,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18.2.7
     version: 18.2.18
+  '@types/uuid':
+    specifier: ^9.0.7
+    version: 9.0.7
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.0.0
     version: 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -666,6 +678,10 @@ packages:
 
   /@types/semver@7.5.6:
     resolution: {integrity: sha512-dn1l8LaMea/IjDoHNd9J52uBbInB796CDffS6VdIxvqYCPSG0V0DzHp76GpaWnlhg88uYyPbXCDIowa86ybd5A==}
+    dev: true
+
+  /@types/uuid@9.0.7:
+    resolution: {integrity: sha512-WUtIVRUZ9i5dYXefDEAI7sh9/O7jGvHg7Df/5O/gtH3Yabe5odI3UWopVR1qbPXQtvOxWu3mM4XxlYeZtMWF4g==}
     dev: true
 
   /@typescript-eslint/eslint-plugin@6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3):
@@ -1410,6 +1426,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immer@10.0.3:
+    resolution: {integrity: sha512-pwupu3eWfouuaowscykeckFmVTpqbzW+rXFCX8rQLkZzM9ftBmU/++Ra+o+L27mz03zJTlyV4UUr+fdKNffo4A==}
+    dev: false
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1994,6 +2014,10 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /sweetalert2@11.10.1:
+    resolution: {integrity: sha512-qu145oBuFfjYr5yZW9OSdG6YmRxDf8CnkgT/sXMfrXGe+asFy2imC2vlaLQ/L/naZ/JZna1MPAY56G4qYM0VUQ==}
+    dev: false
+
   /tailwindcss@3.3.7:
     resolution: {integrity: sha512-pjgQxDZPvyS/nG3ZYkyCvsbONJl7GdOejfm24iMt2ElYQQw8Jc4p0m8RdMp7mznPD0kUhfzwV3zAwa80qI0zmQ==}
     engines: {node: '>=14.0.0'}
@@ -2114,6 +2138,11 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
+  /uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    hasBin: true
+    dev: false
+
   /vite@4.5.1:
     resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -2179,7 +2208,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zustand@4.4.7(@types/react@18.2.45)(react@18.2.0):
+  /zustand@4.4.7(@types/react@18.2.45)(immer@10.0.3)(react@18.2.0):
     resolution: {integrity: sha512-QFJWJMdlETcI69paJwhSMJz7PPWjVP8Sjhclxmxmxv/RYI7ZOvR5BHX+ktH0we9gTWQMxcne8q1OY8xxz604gw==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -2195,6 +2224,7 @@ packages:
         optional: true
     dependencies:
       '@types/react': 18.2.45
+      immer: 10.0.3
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
