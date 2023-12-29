@@ -11,6 +11,7 @@ import {
 
 import { SideMenuItem } from './SideMenuItem'
 import './SideMenu.css'
+import { useAuthStore } from '../../../stores'
 
 interface MenuItem {
   title: string
@@ -43,6 +44,9 @@ const menuItems: MenuItem[] = [
 ]
 
 export const SideMenu = () => {
+  const logoutUser = useAuthStore((state) => state.logoutUser)
+  const user = useAuthStore((state) => state.user)
+
   return (
     <div
       id="menu"
@@ -51,7 +55,7 @@ export const SideMenu = () => {
       <div id="logo" className="my-4 px-6">
         <h1 className="text-lg md:text-2xl font-bold text-white">
           Zustand
-          <span className="text-blue-500 text-xs"> StateManager</span>.
+          <span className="text-blue-500 text-xs">StateManager</span>.
         </h1>
         <p className="text-slate-500 text-sm">Manejador de estados simple pero poderoso.</p>
       </div>
@@ -66,7 +70,7 @@ export const SideMenu = () => {
               alt=""
             />
           </span>
-          <span className="text-sm md:text-base font-bold">Edward Tompson</span>
+          <span className="text-sm md:text-base font-bold">{user?.fullName}</span>
         </a>
       </div>
 
@@ -75,7 +79,7 @@ export const SideMenu = () => {
           <SideMenuItem key={item.href} {...item} />
         ))}
 
-        <NavLink to={'/auth/login'} className="mt-10">
+        <NavLink onClick={logoutUser} to={'/auth/login'} className="mt-10">
           <div>
             <IoLogOutOutline />
           </div>

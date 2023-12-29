@@ -1,6 +1,8 @@
 import { create, type StateCreator } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
+import { useWeddingBoundStore } from '../wedding'
+
 interface PersonState {
   firstName: string
   lastName: string
@@ -33,3 +35,10 @@ export const usePersonStore = create<PersonState & Actions>()(
     )
   )
 )
+
+// emitiendo información a otro store
+usePersonStore.subscribe((nextState /* preState */) => {
+  const { firstName, lastName } = nextState
+  useWeddingBoundStore.getState().setFirstName(firstName)
+  useWeddingBoundStore.getState().setLastName(lastName)
+})
